@@ -30,7 +30,7 @@ MSDS candidate with clinical and public‑sector background, focused on measurab
 ---
 
 ## Contact & Resume
-- **Email:** yourname@email.com  
-- **Resume (PDF):** [/assets/Sara_Maknojia_Resume.pdf](/assets/Sara_Maknojia_Resume.pdf)  
+- **Email:** saramaknojia94@gmail.com
+- **[Resume (PDF)](/assets/Sara_Maknojia_Resume.pdf) 
 - **LinkedIn:** https://www.linkedin.com/in/saramaknojia  
 - **GitHub:** https://github.com/saramaknojia94-ux
