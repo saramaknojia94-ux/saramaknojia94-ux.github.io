@@ -1,3 +1,23 @@
+# --- Site basics ---
+title: Sara Maknojia
+description: Data projects, notes, and experiments
+url: https://saramaknojia94-ux.github.io   # full site URL
+baseurl: ""                                # keep empty since site is at root
+
+# --- Theme (built-in GitHub Pages) ---
 theme: jekyll-theme-cayman
-title: Sara Maknojia Portfolio
-description: Data Analyst | SQL + Python | MSDS Candidate @ BU
+# NOTE: Do not add `remote_theme:` if using `theme:`.
+
+# --- GitHub repo link shown by the theme (optional) ---
+github:
+  is_project_page: true
+  repository_url: https://github.com/saramaknojia94-ux/saramaknojia94-ux.github.io
+
+# --- Nice-to-haves (allowed on GitHub Pages) ---
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# --- Tidy the build (optional) ---
+exclude:
+  - README.md
