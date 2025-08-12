@@ -15,3 +15,5 @@ title: Real-Time Risk Score App
 
 **Repo:** (link) · **Live app:** (link)  
 **Tech:** Streamlit, scikit-learn, FastAPI
+
+[← Back to Portfolio Homepage](../index.md)
