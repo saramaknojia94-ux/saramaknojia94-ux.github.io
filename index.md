@@ -20,7 +20,13 @@ I turn messy real‑world data into clear business decisions. I’m building end
 ---
 
 ## Skills
-**Languages/DB:** SQL, Python · **Data:** Pandas, NumPy, Matplotlib · **ML:** scikit‑learn, SHAP · **Viz:** Tableau/Power BI · **Apps:** Streamlit · **Workflow:** Git/GitHub
+
+![SQL](https://img.shields.io/badge/SQL-blue) ![Python](https://img.shields.io/badge/Python-yellow)
+![Pandas](https://img.shields.io/badge/Pandas-blue) ![NumPy](https://img.shields.io/badge/NumPy-lightblue)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-orange) ![scikit-learn](https://img.shields.io/badge/scikit--learn-lightgrey)
+![SHAP](https://img.shields.io/badge/SHAP-purple) ![Tableau](https://img.shields.io/badge/Tableau-blue)
+![Git](https://img.shields.io/badge/Git-orange) ![GitHub](https://img.shields.io/badge/GitHub-black)
+
 
 ---
 
@@ -30,7 +36,8 @@ MSDS candidate with clinical and public‑sector background, focused on measurab
 ---
 
 ## Contact & Resume
-- **Email:** saramaknojia94@gmail.com
+- **Email:** [saramaknojia94@gmail.com](mailto:saramaknojia94@gmail.com) 
 - **Resume:** [Resume (PDF)](/assets/Sara_Maknojia_Resume.pdf) 
-- **LinkedIn:** https://www.linkedin.com/in/saramaknojia  
-- **GitHub:** https://github.com/saramaknojia94-ux
+- **LinkedIn:** [linkedin.com/in/sara-maknojia](https://www.linkedin.com/in/sara-maknojia)
+- **GitHub:** [github.com/saramaknojia94-ux](https://github.com/saramaknojia94-ux)  
+
