@@ -1,3 +1,8 @@
 theme: jekyll-theme-cayman
 title: "Sara Maknojia"
 description: "Portfolio Website for Data Science Projects"
+author: "Sara Maknojia"
+
+# (Optional but nice)
+plugins:
+  - jekyll-seo-tag
