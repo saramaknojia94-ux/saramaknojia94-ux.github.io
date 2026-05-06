@@ -8,8 +8,8 @@ I turn messy real‑world data into clear business decisions. I’m building end
 ## Featured Projects
 > Click any project to see code, write‑up, and results.
 
-- **Hospital Readmission Dashboard** — SQL + Tableau KPI views that highlight top readmission drivers and potential cost savings.  
-  [View project →](/projects/readmission-dashboard) · Tech: SQL, Pandas, Tableau
+- **Hospital Readmission Dashboard** — Python + Tableau analysis of 100K+ patient records to identify key readmission drivers across age, length of stay, and medication complexity. 
+  [View project →](https://github.com/saramaknojia94-ux/readmission-dashboard) · Tech: Python, Pandas, Matplotlib, Tableau
 
 - **Patient No‑Show Prediction** — ML model (LogReg/XGBoost + SHAP) to flag high‑risk appointments and simulate reminder ROI.  
   [View project →](/projects/no-show-prediction) · Tech: Python, scikit‑learn, SHAP
