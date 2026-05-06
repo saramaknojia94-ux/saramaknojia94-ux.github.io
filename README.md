@@ -3,7 +3,8 @@
 This repository hosts my public **GitHub Pages** site:
 **https://saramaknojia94-ux.github.io**
 
-It showcases end‑to‑end work across SQL analytics, predictive modeling, NLP, and app deployment.
+Senior analytics professional with 6+ years in healthcare analytics, 
+currently completing an MSDS at Boston University.
 
 ## Quick links
 - **Portfolio site:** https://saramaknojia94-ux.github.io
@@ -12,4 +13,3 @@ It showcases end‑to‑end work across SQL analytics, predictive modeling, NLP,
 - **LinkedIn:** https://www.linkedin.com/in/sara-maknojia
 - **GitHub:** https://github.com/saramaknojia94-ux
 
-## Repo structure
