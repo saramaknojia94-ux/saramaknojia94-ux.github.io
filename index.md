@@ -12,7 +12,7 @@ I turn messy real‑world data into clear business decisions. I’m building end
   [View project →](https://github.com/saramaknojia94-ux/readmission-dashboard) · Tech: Python, Pandas, Matplotlib, Tableau
 
 - **Patient No‑Show Prediction** — ML model (LogReg/XGBoost + SHAP) to flag high‑risk appointments and simulate reminder ROI.  
-  [View project →](/projects/no-show-prediction) · Tech: Python, scikit‑learn, SHAP
+  [View project →](https://github.com/saramaknojia94-ux/no-show-prediction)
 
 - **Real‑Time Risk Score App** — Streamlit tool that serves risk scores with explainability; deployable on Streamlit Cloud/AWS.  
   [View project →](/projects/risk-score-app) · Tech: Streamlit, scikit‑learn, FastAPI (optional)
