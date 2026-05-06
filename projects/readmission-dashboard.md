@@ -4,16 +4,26 @@ title: Hospital Readmission Dashboard
 
 # Hospital Readmission Dashboard
 
-**Problem:** Identify drivers of 30-day readmissions and where to focus to reduce rate/cost.  
-**Data:** CMS Hospital Readmissions (public).  
-**Outcome:** Placeholder text for now — will update after analysis.
+**Problem:** 40% of diabetic patients were being readmitted — 
+but no one knew which factors were driving it or where to intervene.
 
-## What’s inside
-- SQL transformations (CTEs, window functions)
-- Tableau dashboard with KPIs & drill-downs
-- Insights summary
+**Data:** Diabetes 130-US Hospitals dataset — 101,766 patient 
+records across 50 variables (Kaggle).
 
-**Repo:** (link) · **Live dashboard:** (link)  
-**Tech:** SQL, Pandas, Tableau
+**Outcome:** Identified three key drivers of readmission — 
+patient age, length of stay, and medication complexity. 
+Patients aged 70-90 and those staying 8+ days had readmission 
+rates exceeding 43%.
 
-[← Back to Portfolio Homepage](../index.md)
+## What's Inside
+
+- Python data cleaning and exploratory analysis (pandas, NumPy)
+- Three visualizations surfacing key readmission risk factors
+- Tableau dashboard with color-coded KPI view by risk factor
+- Full write-up with clinical interpretation of findings
+
+**Repo:** [github.com/saramaknojia94-ux/readmission-dashboard](https://github.com/saramaknojia94-ux/readmission-dashboard)
+**Live Dashboard:** [View on Tableau Public](YOUR TABLEAU LINK HERE)
+**Tech:** Python, Pandas, Matplotlib, Tableau
+
+← [Back to Portfolio Homepage](/)
