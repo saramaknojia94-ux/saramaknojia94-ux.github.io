@@ -23,7 +23,9 @@ rates exceeding 43%.
 - Full write-up with clinical interpretation of findings
 
 **Repo:** [github.com/saramaknojia94-ux/readmission-dashboard](https://github.com/saramaknojia94-ux/readmission-dashboard)
-**Live Dashboard:** [View on Tableau Public](YOUR TABLEAU LINK HERE)
+
+**Live Dashboard:** [View on Tableau Public](https://public.tableau.com/app/profile/sara.maknojia/viz/HospitalReadmissionAnalysis-SaraMaknojia/Dashboard1)
+
 **Tech:** Python, Pandas, Matplotlib, Tableau
 
 ← [Back to Portfolio Homepage](/)
