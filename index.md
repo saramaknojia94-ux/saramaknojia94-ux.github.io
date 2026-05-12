@@ -12,11 +12,13 @@ Open to Data Scientist / Product Analytics roles.
 
 > Click any project to see code, write-up, and results.
 
-- **Hospital Readmission Dashboard** — Python + Tableau analysis of 
-  100K+ patient records to identify key readmission drivers across 
-  age, length of stay, and medication complexity.  
-  [View project →](https://github.com/saramaknojia94-ux/readmission-dashboard) · Tech: Python, Pandas, Matplotlib, Tableau
+- **Medicare Claims Analytics Dashboard** — Python + Tableau analysis 
+  of 10,000+ real CMS Medicare provider records identifying specialty 
+  cost drivers, payment gaps, and chronic disease burden across the 
+  US healthcare system.  
+  [View project →](https://github.com/saramaknojia94-ux/insurance-analytics-dashboard) · Tech: Python, pandas, requests, Matplotlib, Tableau
 
+  
 - **Patient No-Show Prediction** — ML model comparing Logistic 
   Regression and XGBoost to flag high-risk appointments. XGBoost 
   achieved 0.721 ROC-AUC catching 79% of no-shows. SHAP used for 
