@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sara Maknojia — Analytics & Data Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f4f2ed;
+  --bg2: #eceae4;
+  --ink: #1c1b19;
+  --mid: #5c5a55;
+  --soft: #9a9790;
+  --line: #d5d2ca;
+  --red: #c0392b;
+  --red-soft: #f5eeec;
+  --sans: 'Sora', sans-serif;
+  --serif: 'Lora', Georgia, serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ─── NAV ─── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2.5rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 50;
+}
+.nav-id {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.nav-id span {
+  color: var(--soft);
+  font-style: italic;
+  font-size: 0.82rem;
+  margin-left: 0.6rem;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 0.78rem;
+  color: var(--mid);
+  letter-spacing: 0.05em;
+}
+.nav-right a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--ink);
+  color: var(--bg) !important;
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.nav-cta:hover { background: var(--red) !important; }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 6rem 2.5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--line);
+}
+.hero-h {
+  flex: 1;
+  max-width: 660px;
+}
+.hero-h h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+.hero-h h1 em {
+  font-style: italic;
+  color: var(--mid);
+}
+.hero-body {
+  font-size: 0.95rem;
+  color: var(--mid);
+  max-width: 480px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.3rem;
+  display: inline-block;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn-dk { background: var(--ink); color: var(--bg); }
+.btn-dk:hover { background: var(--red); }
+.btn-lt { border: 1px solid var(--line); color: var(--mid); }
+.btn-lt:hover { border-color: var(--mid); color: var(--ink); }
+
+/* right side — meta column */
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 220px;
+  padding-top: 0.5rem;
+}
+.meta-item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.meta-item:first-child { border-top: 1px solid var(--line); }
+.meta-num {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+}
+.meta-label {
+  font-size: 0.72rem;
+  color: var(--soft);
+  line-height: 1.45;
+  margin-top: 0.2rem;
+  max-width: 180px;
+}
+
+/* ─── TICKER-STYLE MARQUEE ─── */
+.marquee-wrap {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0;
+  background: var(--bg2);
+}
+.marquee-inner {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: scroll 28s linear infinite;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.marquee-inner span { color: var(--line); }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── APPROACH ─── */
+.approach {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.approach-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+  padding-top: 0.3rem;
+}
+.approach-content h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  max-width: 620px;
+}
+.approach-content p {
+  font-size: 0.92rem;
+  color: var(--mid);
+  line-height: 1.85;
+  max-width: 560px;
+  margin-bottom: 1rem;
+}
+.approach-content p:last-child { margin-bottom: 0; }
+
+/* ─── WORK ─── */
+.work-section {
+  border-top: 1px solid var(--line);
+}
+.work-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+.work-inner > h2 {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 2.5rem;
+}
+.job {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+.job:first-of-type { border-top: none; }
+.job-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.15rem;
+}
+.job-org {
+  font-size: 0.75rem;
+  color: var(--red);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  font-weight: 500;
+}
+.job-desc {
+  font-size: 0.88rem;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-bottom: 1rem;
+}
+.job-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.pill {
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--line);
+  color: var(--mid);
+}
+.job-date {
+  font-size: 0.75rem;
+  color: var(--soft);
+  text-align: right;
+  line-height: 1.5;
+  padding-top: 0.35rem;
+}
+
+/* ─── PROJECTS ─── */
+.projects-section {
+  border-top: 1px solid var(--line);
+  background: var(--bg2);
+}
+.projects-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+.projects-inner > h2 {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 2.5rem;
+}
+.proj-list {
+  display: flex;
+  flex-direction: column;
+}
+.proj {
+  display: grid;
+  grid-template-columns: 2fr 3fr auto;
+  gap: 3rem;
+  align-items: baseline;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s;
+}
+.proj:hover .proj-name { color: var(--red); }
+.proj:hover .proj-arrow { opacity: 1; transform: translateX(3px); }
+.proj-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  transition: color 0.12s;
+  line-height: 1.4;
+}
+.proj-tag {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-top: 0.3rem;
+}
+.proj-finding {
+  font-size: 0.85rem;
+  color: var(--mid);
+  line-height: 1.7;
+}
+.proj-finding strong { color: var(--ink); font-weight: 500; }
+.proj-arrow {
+  font-size: 1.1rem;
+  color: var(--soft);
+  opacity: 0.4;
+  transition: opacity 0.12s, transform 0.12s;
+  justify-self: end;
+}
+
+/* ─── ABOUT ─── */
+.about-section {
+  border-top: 1px solid var(--line);
+}
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 6rem;
+  align-items: start;
+}
+.about-text h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 1.75rem;
+}
+.about-text p {
+  font-size: 0.92rem;
+  color: var(--mid);
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+  max-width: 520px;
+}
+.about-text p:last-child { margin-bottom: 0; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sb-block h3 {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 0.9rem;
+  font-weight: 500;
+}
+.sb-row {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--mid);
+  line-height: 1.45;
+}
+.sb-row:last-child { border-bottom: none; }
+.sb-row em {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--soft);
+  font-style: normal;
+  margin-top: 0.1rem;
+}
+.open-to {
+  background: var(--red-soft);
+  padding: 1.1rem 1.25rem;
+}
+.open-to h3 {
+  color: var(--red);
+  margin-bottom: 0.75rem;
+}
+.open-to .sb-row {
+  border-color: rgba(192,57,43,0.15);
+  color: var(--ink);
+}
+.open-to .sb-row:last-child { border-bottom: none; }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--line);
+  background: var(--ink);
+  color: rgba(244,242,237,0.55);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.footer-left h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: #f4f2ed;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+.footer-left p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: 1.75rem;
+}
+.footer-email {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #f4f2ed;
+  border-bottom: 1px solid rgba(244,242,237,0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.15s;
+}
+.footer-email:hover { border-color: #f4f2ed; }
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0.5rem;
+}
+.footer-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(244,242,237,0.1);
+  font-size: 0.82rem;
+  color: rgba(244,242,237,0.55);
+  transition: color 0.15s;
+}
+.footer-link:last-child { border-bottom: none; }
+.footer-link:hover { color: #f4f2ed; }
+.footer-link-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(244,242,237,0.28);
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  border-top: 1px solid rgba(244,242,237,0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: rgba(244,242,237,0.22);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 800px) {
+  nav { padding: 1rem 1.5rem; }
+  .hero { padding: 3.5rem 1.5rem 0; }
+  .hero-top { flex-direction: column; gap: 2.5rem; padding-bottom: 3rem; }
+  .hero-meta { flex-direction: row; flex-wrap: wrap; min-width: 0; }
+  .meta-item { flex: 1; min-width: 120px; border-top: 1px solid var(--line); }
+  .approach { grid-template-columns: 1fr; gap: 1.5rem; padding: 3.5rem 1.5rem; }
+  .work-inner, .projects-inner, .about-inner { padding: 3.5rem 1.5rem; }
+  .proj { grid-template-columns: 1fr; gap: 0.75rem; }
+  .proj-arrow { display: none; }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+  .footer-bottom { padding: 1rem 1.5rem; }
+  .job { grid-template-columns: 1fr; gap: 0.5rem; }
+  .job-date { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-id">
+    Sara Maknojia
+    <span>Friendswood, TX</span>
+  </div>
+  <div class="nav-right">
+    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="assets/Sara_Maknojia_Resume.pdf" class="nav-cta">Résumé</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-h">
+      <h1>Data systems that<br>help people make<br><em>better decisions.</em></h1>
+      <p class="hero-body">
+        I've spent six years in healthcare and public health data — building the
+        pipelines that didn't exist, dashboards leadership could actually use,
+        and tools that go into the hands of people who aren't analysts.
+        I'm looking for roles where the data function is still being figured out.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-dk">See the work</a>
+        <a href="#about" class="btn btn-lt">About me</a>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-num">6+</div>
+        <div class="meta-label">years in production healthcare data environments</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">$1M</div>
+        <div class="meta-label">data integration initiative led start to finish</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">40%</div>
+        <div class="meta-label">lift in reporting accuracy after pipeline rebuild</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">2</div>
+        <div class="meta-label">peer-reviewed publications, both first-author projects</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    SQL &nbsp;<span>·</span>&nbsp; Python &nbsp;<span>·</span>&nbsp; Snowflake &nbsp;<span>·</span>&nbsp; Tableau &nbsp;<span>·</span>&nbsp; Salesforce CRM Analytics &nbsp;<span>·</span>&nbsp; Power BI &nbsp;<span>·</span>&nbsp; XGBoost &nbsp;<span>·</span>&nbsp; SHAP &nbsp;<span>·</span>&nbsp; Streamlit &nbsp;<span>·</span>&nbsp; REST APIs &nbsp;<span>·</span>&nbsp; ETL/ELT &nbsp;<span>·</span>&nbsp; HIPAA Data &nbsp;<span>·</span>&nbsp; Healthcare Analytics &nbsp;<span>·</span>&nbsp; pandas &nbsp;<span>·</span>&nbsp; scikit-learn &nbsp;<span>·</span>&nbsp; Git &nbsp;<span>·</span>&nbsp; CMS Medicare &nbsp;<span>·</span>
+    &nbsp; SQL &nbsp;<span>·</span>&nbsp; Python &nbsp;<span>·</span>&nbsp; Snowflake &nbsp;<span>·</span>&nbsp; Tableau &nbsp;<span>·</span>&nbsp; Salesforce CRM Analytics &nbsp;<span>·</span>&nbsp; Power BI &nbsp;<span>·</span>&nbsp; XGBoost &nbsp;<span>·</span>&nbsp; SHAP &nbsp;<span>·</span>&nbsp; Streamlit &nbsp;<span>·</span>&nbsp; REST APIs &nbsp;<span>·</span>&nbsp; ETL/ELT &nbsp;<span>·</span>&nbsp; HIPAA Data &nbsp;<span>·</span>&nbsp; Healthcare Analytics &nbsp;<span>·</span>&nbsp; pandas &nbsp;<span>·</span>&nbsp; scikit-learn &nbsp;<span>·</span>&nbsp; Git &nbsp;<span>·</span>&nbsp; CMS Medicare &nbsp;<span>·</span>
+  </div>
+</div>
+
+<!-- APPROACH -->
+<div class="approach">
+  <div class="approach-label">How I work</div>
+  <div class="approach-content">
+    <h2>I started as a clinician. It changed how I think about data.</h2>
+    <p>
+      Before I wrote a SQL query, I was a physiotherapist. Then a community health worker tracking
+      chronic disease trends across neighborhoods. That background means I've always cared less
+      about whether the model is technically correct and more about whether anyone changed
+      anything because of it.
+    </p>
+  </div>
+</div>
+
+<!-- WORK -->
+<div class="work-section" id="work">
+  <div class="work-inner">
+    <h2>Experience</h2>
+    <p style="font-size:0.8rem; color:var(--soft); margin-bottom:1.5rem;">
+      Selected roles. Full history on <a href="https://www.linkedin.com/in/sara-maknojia" target="_blank" rel="noopener" style="color:var(--accent); border-bottom:1px solid var(--accent);">LinkedIn</a>.
+    </p>
+
+    <div class="job">
+      <div>
+        <div class="job-title">Data Program Manager</div>
+        <div class="job-org">Galveston County Health District</div>
+        <p class="job-desc">
+          Led the district's data integration overhaul. Built pipelines pulling from SQL,
+          Salesforce CRM, and REST APIs into a single analytics layer, including schema design,
+          transformation logic, automated QA, and the Tableau dashboards that plugged into it.
+          Reporting accuracy improved 40%. Ad-hoc requests dropped significantly once the
+          self-serve infrastructure was in place.
+        </p>
+        <div class="job-pills">
+          <span class="pill">Data architecture</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Salesforce CRM</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">Tableau</span>
+          <span class="pill">Snowflake</span>
+          <span class="pill">Executive reporting</span>
+        </div>
+      </div>
+      <div class="job-date">Jun 2022<br>Present</div>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="job-title">Data Analyst</div>
+        <div class="job-org">Galveston County Health District</div>
+        <p class="job-desc">
+          Built the ETL pipelines and reporting products that became the foundation for everything
+          that followed. Cleaned and modeled datasets exceeding 2M records. Wrote the Python and
+          SQL that freed up the team from a constant backlog of one-off data pulls.
+        </p>
+        <div class="job-pills">
+          <span class="pill">Python</span>
+          <span class="pill">ETL pipelines</span>
+          <span class="pill">2M+ record datasets</span>
+          <span class="pill">STATA</span>
+          <span class="pill">Self-serve analytics</span>
+        </div>
+      </div>
+      <div class="job-date">Aug 2021<br>Jun 2022</div>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="job-title">COVID-19 Analytics Lead</div>
+        <div class="job-org">Galveston County Health District</div>
+        <p class="job-desc">
+          Owned the CRM-driven analytics pipeline during the district's most operationally intense
+          period. Tracking testing, hospitalizations, and case counts in real time, with leadership
+          reading the dashboards daily to make resource decisions. High stakes, no room for data
+          quality issues.
+        </p>
+        <div class="job-pills">
+          <span class="pill">Crisis analytics</span>
+          <span class="pill">Salesforce CRM</span>
+          <span class="pill">Real-time dashboards</span>
+          <span class="pill">Public health surveillance</span>
+        </div>
+      </div>
+      <div class="job-date">May 2020<br>Aug 2021</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="projects-section" id="projects">
+  <div class="projects-inner">
+    <h2>Built on my own time</h2>
+    <div class="proj-list">
+
+      <a class="proj" href="https://public.tableau.com/app/profile/sara.maknojia/viz/TexasOpioidMortalitySurveillance/Dashboard1#1" target="_blank" rel="noopener">
+        <div>
+          <div class="proj-name">Texas opioid mortality surveillance</div>
+          <div class="proj-tag">Executive dashboard &middot; Tableau &middot; CDC WONDER, NEMSIS</div>
+        </div>
+        <div class="proj-finding">
+          Live Tableau dashboard tracking opioid deaths, EMS naloxone response, and drug type
+          shifts across Texas's 20 largest counties from 2018 to 2022.
+          <strong>Fentanyl grew from 38% to 68%</strong> of all deaths. Built for a county
+          health director to open on Monday morning and know exactly where to focus.
+        </div>
+        <div class="proj-arrow">↗</div>
+      </a>
+
+      <a class="proj" href="https://oncology-triage-assistant-evaizat8jgk7yalym7gpeh.streamlit.app/" target="_blank" rel="noopener">
+        <div>
+          <div class="proj-name">Oncology triage assistant</div>
+          <div class="proj-tag">Clinical AI &middot; Streamlit, Python, Anthropic API</div>
+        </div>
+        <div class="proj-finding">
+          A structured symptom screener for oncology nurses. Guides intake, flags safety
+          criteria, and generates a <strong>provider-ready clinical summary</strong> in seconds.
+          Built because free-text triage notes miss things. Deployed and live.
+        </div>
+        <div class="proj-arrow">↗</div>
+      </a>
+
+      <a class="proj" href="https://sara-noshow-risk.streamlit.app" target="_blank" rel="noopener">
+        <div>
+          <div class="proj-name">Patient no-show risk app</div>
+          <div class="proj-tag">Deployed ML &middot; XGBoost, SHAP, Streamlit &middot; 110,527 appointments</div>
+        </div>
+        <div class="proj-finding">
+          XGBoost model, <strong>0.721 ROC-AUC</strong>, 79% no-show recall. SHAP explainability
+          pointed to wait time as the dominant predictor. Deployed as a live Streamlit app
+          so clinical staff can act on it without touching a notebook.
+        </div>
+        <div class="proj-arrow">↗</div>
+      </a>
+
+      <a class="proj" href="https://github.com/saramaknojia94-ux/insurance-analytics-dashboard" target="_blank" rel="noopener">
+        <div>
+          <div class="proj-name">Medicare payment analysis</div>
+          <div class="proj-tag">Federal data &middot; CMS API, Python, Tableau</div>
+        </div>
+        <div class="proj-finding">
+          10,000+ real provider records from the CMS Medicare API. No specialty gets more than
+          40 cents on the dollar. Registered Dietitians serving <strong>75% diabetic patients</strong>
+          receive $5K avg vs. Vascular Surgery's $532K. The gap is structural and it's in the data.
+        </div>
+        <div class="proj-arrow">→</div>
+      </a>
+
+      <a class="proj" href="https://github.com/saramaknojia94-ux/healthcare-claims-pipeline" target="_blank" rel="noopener">
+        <div>
+          <div class="proj-name">Healthcare claims data pipeline</div>
+          <div class="proj-tag">SQL pipeline &middot; Staging, intermediate, mart &middot; CMS Medicare</div>
+        </div>
+        <div class="proj-finding">
+          Three-layer SQL transformation pipeline on CMS Medicare provider data.
+          Staging cleans and casts. Intermediate aggregates to specialty level.
+          The mart surfaces an equity finding: <strong>specialties serving the most patients
+          receive the lowest reimbursement rates.</strong> Python + SQL + Colab notebook.
+        </div>
+        <div class="proj-arrow">→</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>What six years inside a health district taught me about data.</h2>
+      <p>
+        I joined Galveston County Health District in late 2019 as a data specialist. What I
+        walked into was not one data problem. It was all three of the problems that show up
+        in every under-resourced public health environment. Data existed but nobody could
+        access or trust it. Leadership was making decisions without it. And what did get
+        collected rarely turned into anything useful. At different points over six years,
+        I worked through all of it.
+      </p>
+      <p>
+        The moment I understood why I was doing this work happened not in a data review or
+        a pipeline deployment. It happened watching someone outside the data team, a program
+        director, a department head, someone who had never looked at a dashboard before,
+        suddenly understand something about their own operation that they had not been able
+        to see. That moment, where data crosses the gap between existing and being useful,
+        is the thing I have spent my career trying to engineer.
+      </p>
+      <p>
+        Most organizations have more data than they can act on. The failure is rarely in
+        collection. It is in the gap between data existing and data meaning something to
+        the person who needs to make a decision. I have built pipelines, dashboards, and
+        predictive tools, but all of it has been in service of closing that gap. The
+        technical work is the means. The decision is the point.
+      </p>
+      <p>
+        I started as a physiotherapist, which means I have always understood that the
+        person on the other end of the analysis is a patient, a community, a population
+        with real consequences attached. That sensibility does not go away when you move
+        into data. It changes how you decide what to build, how you frame a finding, and
+        who you design for. I am looking for environments where that orientation is an
+        asset, where healthcare data is treated as a serious infrastructure problem, and
+        where there is room to use AI thoughtfully rather than just quickly.
+      </p>
+    </div>
+    <div class="sidebar">
+      <div class="sb-block">
+        <h3>Education</h3>
+        <div class="sb-row">
+          MS Data Science, in progress
+          <em>Boston University</em>
+        </div>
+        <div class="sb-row">
+          MPH, Community Health
+          <em>MCPHS University</em>
+        </div>
+        <div class="sb-row">
+          Bachelor of Physiotherapy
+          <em>D.Y. Patil University, Mumbai</em>
+        </div>
+      </div>
+      <div class="sb-block">
+        <h3>Published research</h3>
+        <div class="sb-row">
+          SARS-CoV-2 Delta Variant Outbreak Study
+          <em>J. Pediatric Infectious Disease Society, 2022</em>
+        </div>
+        <div class="sb-row">
+          COVID-19 Summer Camp Outbreak Investigation
+          <em>MedRxiv, May 2022</em>
+        </div>
+      </div>
+      <div class="sb-block open-to">
+        <h3>What I'm looking for</h3>
+        <div class="sb-row">Environments where data and AI are being built into healthcare seriously. Where the infrastructure matters as much as the insight, and where clinical context is an asset, not a curiosity.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <h2>If you're building<br>a data function,<br>let's talk.</h2>
+      <p>
+        I'm based in Friendswood, TX and open to remote or hybrid roles.
+        The best way to reach me is email.
+      </p>
+      <a href="mailto:saramaknojia94@gmail.com" class="footer-email">
+        saramaknojia94@gmail.com
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/sara-maknojia" target="_blank" rel="noopener" class="footer-link">
+        <div>
+          <div class="footer-link-label">LinkedIn</div>
+          linkedin.com/in/sara-maknojia
+        </div>
+        <span>↗</span>
+      </a>
+      <a href="https://github.com/saramaknojia94-ux" target="_blank" rel="noopener" class="footer-link">
+        <div>
+          <div class="footer-link-label">GitHub</div>
+          github.com/saramaknojia94-ux
+        </div>
+        <span>↗</span>
+      </a>
+      <a href="https://orcid.org/0000-0002-8636-7967" target="_blank" rel="noopener" class="footer-link">
+        <div>
+          <div class="footer-link-label">ORCID</div>
+          Research publications
+        </div>
+        <span>↗</span>
+      </a>
+      <a href="assets/Sara_Maknojia_Resume.pdf" class="footer-link">
+        <div>
+          <div class="footer-link-label">Résumé</div>
+          Download PDF
+        </div>
+        <span>↓</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Sara Maknojia &mdash; Friendswood, TX</span>
+    <span>Built by hand, 2025</span>
+  </div>
+</footer>
+
+</body>
+</html>
